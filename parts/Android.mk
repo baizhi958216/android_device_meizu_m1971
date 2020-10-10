@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The MoKee Open Source Project
+# Copyright (C) 2020 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -18,7 +18,7 @@ LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_PRIVILEGED_MODULE := true
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
-    org.mokee.platform.internal
+    org.lineageos.platform.internal
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 

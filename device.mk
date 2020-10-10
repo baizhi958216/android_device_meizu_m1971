@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019-2020 The MoKee Open Source Project
+# Copyright (C) 2020 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -9,7 +9,7 @@ $(call inherit-product, vendor/meizu/m1971/m1971-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-mokee
+    $(LOCAL_PATH)/overlay-lineage
 
 # Charger
 PRODUCT_COPY_FILES += \
