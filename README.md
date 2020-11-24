@@ -25,4 +25,4 @@ Meizu 16s was announced and released in April 2019.
 
 ## Device picture
 
-![Meizu 16s](https://fms.res.meizu.com/dms/2019/04/23/0b722ca1-822d-4dc4-ada7-60d4ac1180c2.png "Meizu 16s")
+![Meizu 16s](https://openfile.meizu.com/group1/M00/07/23/Cgbj0FzaXQqAH-L3AAeSSra0qAg862.png680x680.jpg "Meizu 16s")
