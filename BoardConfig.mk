@@ -34,7 +34,7 @@ SOONG_CONFIG_MEIZU_SM8150_LIGHT_MX_LED_PATH := /sys/class/leds/breath
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Releasetools
-TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
+#TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
