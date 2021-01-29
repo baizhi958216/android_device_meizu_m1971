@@ -25,7 +25,7 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml \
-    vendor/mokee/config/permissions/vendor.mokee.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.mokee.biometrics.fingerprint.inscreen.xml
+    vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -49,7 +49,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    mokee.biometrics.fingerprint.inscreen@1.0-service.meizu_sm8150
+    lineage.biometrics.fingerprint.inscreen@1.0-service.meizu_sm8150
 
 # IMS
 PRODUCT_PACKAGES += \
@@ -66,8 +66,8 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    mokee.livedisplay@2.0-init.sh \
-    mokee.livedisplay@2.0-service-meizu_sm8150
+    lineage.livedisplay@2.0-init.sh \
+    lineage.livedisplay@2.0-service-meizu_sm8150
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -86,7 +86,7 @@ PRODUCT_BOOT_JARS += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    mokee.touch@1.0-service.meizu_sm8150
+    lineage.touch@1.0-service.meizu_sm8150
 
 # Vibrator
 PRODUCT_PACKAGES += \
