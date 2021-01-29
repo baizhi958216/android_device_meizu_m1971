@@ -95,3 +95,7 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.2-service.meizu_sm8150
+
+# Wifi
+PRODUCT_PACKAGES += \
+    WifiOverlay
