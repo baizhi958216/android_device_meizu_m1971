@@ -97,6 +97,12 @@ TARGET_USES_MKE2FS := true
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_meizu_sm8150
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /mnt/vendor/persist:/persist \
+    /vendor/bt_firmware:/bt_firmware \
+    /vendor/firmware_mnt:/firmware \
+    /vendor/dsp:/dsp
+
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 

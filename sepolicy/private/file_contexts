@@ -4,3 +4,6 @@
 
 # Persist
 /persist(/.*)?                                  u:object_r:mnt_vendor_file:s0
+
+# Dsp
+/dsp(/.*)?               u:object_r:adsprpcd_file:s0
