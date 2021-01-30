@@ -101,6 +101,8 @@ PRODUCT_PACKAGES += \
     vndk-sp \
     com.android.vndk.current.on_vendor
 
+PRODUCT_EXTRA_VNDK_VERSIONS := 28
+
 # Wifi
 PRODUCT_PACKAGES += \
     WifiOverlay
