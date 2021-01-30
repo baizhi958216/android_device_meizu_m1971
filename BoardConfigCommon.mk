@@ -100,8 +100,13 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/qcom/sepolicy/private
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += device/qcom/sepolicy/public
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
+    device/qcom/sepolicy_vndr/generic/private \
+    device/qcom/sepolicy_vndr/qva/private
+
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
+    device/qcom/sepolicy_vndr/generic/public \
+    device/qcom/sepolicy_vndr/qva/public
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
