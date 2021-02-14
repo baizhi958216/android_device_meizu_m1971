@@ -98,6 +98,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lineage.touch@1.0-service.meizu_sm8150
 
+# ViaBrowser
+PRODUCT_PACKAGES += \
+    ViaBrowser
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.2-service.meizu_sm8150
