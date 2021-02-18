@@ -15,6 +15,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/charger,root/res/images/charger)
 
+# GBoard
+PRODUCT_PACKAGES += \
+    Gboard
+
 # GCamGo
 PRODUCT_PACKAGES += \
     GCamGo
