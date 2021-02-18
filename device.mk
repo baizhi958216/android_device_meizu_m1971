@@ -15,6 +15,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/charger,root/res/images/charger)
 
+# GCamGo
+PRODUCT_PACKAGES += \
+    GCamGo
+
 # Init
 PRODUCT_PACKAGES += \
     init.target.rc
