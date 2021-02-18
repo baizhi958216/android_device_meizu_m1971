@@ -22,10 +22,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from m1971 device
 $(call inherit-product, device/meizu/m1971/device.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common DotOS stuff.
+$(call inherit-product, vendor/dot/config/common.mk)
+WITH_GMS := true
+TARGET_SUPPORTS_BLUR := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SUPPORTS_BLUR := true
+EXTRA_FOD_ANIMATIONS := true
+TARGET_HAS_FOD := true
+TARGET_ARCH := arm64
 
-PRODUCT_NAME := lineage_m1971
+PRODUCT_NAME := dot_m1971
 PRODUCT_BRAND := meizu
 PRODUCT_DEVICE := m1971
 PRODUCT_MANUFACTURER := meizu
