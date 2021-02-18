@@ -47,10 +47,6 @@ PRODUCT_PACKAGES += \
     libvulkan \
     vendor.display.config@1.0
 
-# FastCharge HAL
-PRODUCT_PACKAGES += \
-    lineage.fastcharge@1.0-service.meizu_sm8150
-
 # Fingerprint
 PRODUCT_PACKAGES += \
     lineage.biometrics.fingerprint.inscreen@1.0-service.meizu_sm8150
