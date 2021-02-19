@@ -47,6 +47,10 @@ PRODUCT_PACKAGES += \
     libvulkan \
     vendor.display.config@1.0
 
+# MEIZUDoze
+PRODUCT_PACKAGES += \
+    MEIZUDoze
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     lineage.biometrics.fingerprint.inscreen@1.0-service.meizu_sm8150
