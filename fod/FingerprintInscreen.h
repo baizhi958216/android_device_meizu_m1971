@@ -64,6 +64,8 @@ class FingerprintInscreen : public IFingerprintInscreen {
     bool mIconShown;
     bool mFingerPressed;
 
+    std::string mFODModel;
+
     void notifyKeyEvent(int value);
     void notifyHal(int32_t cmd);
 };

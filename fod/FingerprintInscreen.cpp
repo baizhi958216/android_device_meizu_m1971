@@ -20,7 +20,11 @@
 #include "FingerprintInscreen.h"
 #include "KeyEventWatcher.h"
 
+#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+#include <sys/_system_properties.h>
+
 #include <cutils/properties.h>
+#include <android-base/properties.h>
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
 #include <fstream>
@@ -52,6 +56,8 @@ namespace fingerprint {
 namespace inscreen {
 namespace V1_0 {
 namespace implementation {
+
+using android::base::GetProperty;
 
 /*
  * Write value to path and close file.
@@ -113,13 +119,36 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
     return Void();
 }
 
+// Return<void> FingerprintInscreen::onPress() {
+//     mFingerPressed = true;
+//     set(HBM_ENABLE_PATH, 1);
+//     set(DIMMING_SPEED_PATH, 1);
+//     set(BOOST_ENABLE_PATH, 1);
+//     std::thread([this]() {
+//         std::this_thread::sleep_for(std::chrono::milliseconds(150));
+//         if (mFingerPressed) {
+//             notifyHal(NOTIFY_FINGER_DOWN);
+//         }
+//     }).detach();
+//     return Void();
+// }
+// 
+// Return<void> FingerprintInscreen::onRelease() {
+//     mFingerPressed = false;
+//     set(HBM_ENABLE_PATH, 0);
+//     set(DIMMING_SPEED_PATH, 1);
+//     notifyHal(NOTIFY_FINGER_UP);
+//     return Void();
+// }
+
+//Port from TRANSAERO21/android_device_meizu_sdm845/fod
 Return<void> FingerprintInscreen::onPress() {
     mFingerPressed = true;
-    set(HBM_ENABLE_PATH, 1);
-    set(DIMMING_SPEED_PATH, 1);
-    set(BOOST_ENABLE_PATH, 1);
     std::thread([this]() {
-        std::this_thread::sleep_for(std::chrono::milliseconds(150));
+        std::this_thread::sleep_for(std::chrono::milliseconds(12)); /* crDroid != Descendant */
+        set(HBM_ENABLE_PATH, 1);
+        LOG(INFO) << "onPress: HBM is on!";
+        std::this_thread::sleep_for(std::chrono::milliseconds(120));
         if (mFingerPressed) {
             notifyHal(NOTIFY_FINGER_DOWN);
         }
@@ -129,9 +158,14 @@ Return<void> FingerprintInscreen::onPress() {
 
 Return<void> FingerprintInscreen::onRelease() {
     mFingerPressed = false;
-    set(HBM_ENABLE_PATH, 0);
-    set(DIMMING_SPEED_PATH, 1);
     notifyHal(NOTIFY_FINGER_UP);
+    std::thread([this]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(37)); /* crDroid != Descendant */
+        if (!mFingerPressed) {
+            set(HBM_ENABLE_PATH, 0);
+            LOG(INFO) << "onRelease: HBM is off!";
+        }
+    }).detach();
     return Void();
 }
 
