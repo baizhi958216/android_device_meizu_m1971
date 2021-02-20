@@ -33,9 +33,6 @@
 
 #define FINGERPRINT_ACQUIRED_VENDOR 6
 
-#define NOTIFY_FINGER_DETECTED 1
-#define NOTIFY_FINGER_REMOVED 2
-
 #define NOTIFY_FINGER_DOWN 1536
 #define NOTIFY_FINGER_UP 1537
 #define NOTIFY_UI_READY 1607
@@ -148,12 +145,14 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 Return<void> FingerprintInscreen::onPress() {
     mFingerPressed = true;
     std::thread([this]() {
-        std::this_thread::sleep_for(std::chrono::milliseconds(12)); /* crDroid != Descendant */
+        std::this_thread::sleep_for(std::chrono::milliseconds(12));
         set(HBM_ENABLE_PATH, 1);
+        set(DIMMING_SPEED_PATH, 1);
+        set(BOOST_ENABLE_PATH, 1);
         LOG(INFO) << "onPress: HBM is on!";
         std::this_thread::sleep_for(std::chrono::milliseconds(120));
          if (mFingerPressed) {
-             notifyHal(NOTIFY_FINGER_DETECTED);
+             notifyHal(NOTIFY_FINGER_DOWN);
          }
     }).detach();
     return Void();
@@ -161,14 +160,9 @@ Return<void> FingerprintInscreen::onPress() {
 
 Return<void> FingerprintInscreen::onRelease() {
     mFingerPressed = false;
-    notifyHal(NOTIFY_FINGER_REMOVED);
-    std::thread([this]() {
-        std::this_thread::sleep_for(std::chrono::milliseconds(37)); /* crDroid != Descendant */
-        if (!mFingerPressed) {
-            set(HBM_ENABLE_PATH, 0);
-            LOG(INFO) << "onRelease: HBM is off!";
-        }
-    }).detach();
+    notifyHal(NOTIFY_FINGER_UP);
+    set(HBM_ENABLE_PATH, 0);
+    LOG(INFO) << "onPress: HBM is off!";
     return Void();
 }
 
