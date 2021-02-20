@@ -33,6 +33,9 @@
 
 #define FINGERPRINT_ACQUIRED_VENDOR 6
 
+#define NOTIFY_FINGER_DETECTED 1
+#define NOTIFY_FINGER_REMOVED 2
+
 #define NOTIFY_FINGER_DOWN 1536
 #define NOTIFY_FINGER_UP 1537
 #define NOTIFY_UI_READY 1607
@@ -150,7 +153,7 @@ Return<void> FingerprintInscreen::onPress() {
         LOG(INFO) << "onPress: HBM is on!";
         std::this_thread::sleep_for(std::chrono::milliseconds(120));
         if (mFingerPressed) {
-            notifyHal(NOTIFY_FINGER_DOWN);
+            notifyHal(NOTIFY_FINGER_DETECTED, 0);
         }
     }).detach();
     return Void();
@@ -158,7 +161,7 @@ Return<void> FingerprintInscreen::onPress() {
 
 Return<void> FingerprintInscreen::onRelease() {
     mFingerPressed = false;
-    notifyHal(NOTIFY_FINGER_UP);
+    notifyHal(NOTIFY_FINGER_REMOVED, 0);
     std::thread([this]() {
         std::this_thread::sleep_for(std::chrono::milliseconds(37)); /* crDroid != Descendant */
         if (!mFingerPressed) {
