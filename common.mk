@@ -107,11 +107,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.2-service.meizu_sm8150
 
-# VNDK-SP
-PRODUCT_PACKAGES += \
-    vndk-sp \
-    com.android.vndk.current.on_vendor
-
 PRODUCT_EXTRA_VNDK_VERSIONS := 28
 
 # Wifi
