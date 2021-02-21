@@ -40,10 +40,11 @@
 // #define NOTIFY_ENABLE_PAY_ENVIRONMENT 1609
 // #define NOTIFY_DISABLE_PAY_ENVIRONMENT 1610
 
-#define BOOST_ENABLE_PATH "/sys/class/meizu/fp/qos_set"
 #define DIMMING_SPEED_PATH "/sys/class/meizu/lcm/display/dimming_speed"
 #define HBM_ENABLE_PATH "/sys/class/meizu/lcm/display/hbm"
 #define BRIGHTNESS_PATH "/sys/class/backlight/panel0-backlight/brightness"
+#define DC_PATH "/sys/class/meizu/lcm/display/DC_Enable"
+#define DC_Level_PATH "/sys/class/meizu/lcm/display/DC_Level" 306
 
 #define TOUCHPANAL_DEV_PATH "/dev/input/" FOD_INPUT
 
@@ -146,9 +147,9 @@ Return<void> FingerprintInscreen::onPress() {
     mFingerPressed = true;
     std::thread([this]() {
         std::this_thread::sleep_for(std::chrono::milliseconds(12));
+        set(DC_PATH, 0);
         set(HBM_ENABLE_PATH, 1);
         set(DIMMING_SPEED_PATH, 1);
-        set(BOOST_ENABLE_PATH, 1);
         LOG(INFO) << "onPress: HBM is on!";
         std::this_thread::sleep_for(std::chrono::milliseconds(120));
          if (mFingerPressed) {
@@ -162,13 +163,14 @@ Return<void> FingerprintInscreen::onRelease() {
     mFingerPressed = false;
     notifyHal(NOTIFY_FINGER_UP);
     set(HBM_ENABLE_PATH, 0);
+    set(DC_PATH, 1);
     LOG(INFO) << "onPress: HBM is off!";
     return Void();
 }
 
 Return<void> FingerprintInscreen::onShowFODView() {
     mIconShown = true;
-    set(BOOST_ENABLE_PATH, 1);
+    set(DC_PATH, 0);
     set(DIMMING_SPEED_PATH, 1);
     notifyHal(NOTIFY_UI_READY);
     return Void();
