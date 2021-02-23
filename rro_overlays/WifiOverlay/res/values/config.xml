@@ -66,5 +66,11 @@
     
     <!-- Wifi driver supports batched scan -->
     <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
-    
+
+    <!-- list of interface names for SoftAp in Dual mode. -->
+    <string-array translatable="false" name="config_wifi_dual_sap_interfaces">
+        <item>"softap1"</item>
+        <item>"softap2"</item>
+    </string-array>
+
 </resources>
