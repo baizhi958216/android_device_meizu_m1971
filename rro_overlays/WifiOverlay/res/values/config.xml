@@ -86,6 +86,5 @@
     <bool name="config_wifi_framework_enable_voice_call_sar_tx_power_limit">false</bool>
     <bool name="config_wifi_only_link_same_credential_configurations">true</bool>
     <bool name="config_wifi_revert_country_code_on_cellular_loss">false</bool>
-    <bool name="config_wifi_turn_off_during_emergency_call">false</bool>
 
 </resources>
