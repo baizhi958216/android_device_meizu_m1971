@@ -360,4 +360,7 @@
         <item>0:2:15</item>
     </string-array>
 
+    <!-- Remote server that can provide NTP responses. -->
+    <string translatable="false" name="config_ntpServer">ntp3.aliyun.com</string>
+
 </resources>
