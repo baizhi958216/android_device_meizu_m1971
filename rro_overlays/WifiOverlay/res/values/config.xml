@@ -72,5 +72,8 @@
         <item>"softap1"</item>
         <item>"softap2"</item>
     </string-array>
+    
+    <!-- Disable WPA2 to WPA3 auto-upgrade -->
+    <bool translatable="false" name="config_wifiSaeUpgradeEnabled">false</bool>
 
 </resources>
