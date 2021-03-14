@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "fastcharge@1.0-service.meizu_sm8150"
+#define LOG_TAG "fastcharge@1.0-service.meizu_m1971"
 
 #include "FastCharge.h"
 #include <android-base/logging.h>

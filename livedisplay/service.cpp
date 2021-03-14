@@ -17,7 +17,7 @@
 
 #include <dlfcn.h>
 
-#define LOG_TAG "lineage.livedisplay@2.0-service-meizu_sm8150"
+#define LOG_TAG "lineage.livedisplay@2.0-service-meizu_m1971"
 
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>

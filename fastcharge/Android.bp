@@ -1,6 +1,6 @@
 cc_binary {
-    name: "lineage.fastcharge@1.0-service.meizu_sm8150",
-    init_rc: ["vendor.lineage.fastcharge@1.0-service.meizu_sm8150.rc"],
+    name: "lineage.fastcharge@1.0-service.meizu_m1971",
+    init_rc: ["vendor.lineage.fastcharge@1.0-service.meizu_m1971.rc"],
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
     srcs: [

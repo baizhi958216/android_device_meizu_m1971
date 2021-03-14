@@ -6,9 +6,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter m1971 m1973 m1928,$(TARGET_DEVICE)),)
+ifneq ($(filter m1971,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
-
 include $(CLEAR_VARS)
 
 IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
