@@ -150,5 +150,8 @@ BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
+# BLUR
+TARGET_USES_BLUR := true
+
 # Inherit from the proprietary version
 -include vendor/meizu/m1971/BoardConfigVendor.mk
