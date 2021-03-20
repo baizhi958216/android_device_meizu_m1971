@@ -166,4 +166,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ViaBrowser \
     GCamGo \
-    Gboard
+    Gboard \
+    FodAnimations
